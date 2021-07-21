@@ -32,7 +32,7 @@ const Expenses = (props) => {
         />
       ))} */}
 
-      <ExpensesList items={filteredExpenses} />
+      <ExpensesList items={filteredExpenses} delId={props.onDelete} />
     </Card>
   );
 };

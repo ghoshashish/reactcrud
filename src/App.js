@@ -32,11 +32,17 @@ const App = () => {
       return [expense, ...prevExpenses];
     });
   };
+  const deleteHandler = (itemId) => {
+    setExpenses((prevData) => {
+      console.log(prevData);
+      return prevData.filter((exp) => exp.id !== itemId);
+    });
+  };
 
   return (
     <div className="App">
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      <Expenses items={expenses} onDelete={deleteHandler} />
     </div>
   );
 };
